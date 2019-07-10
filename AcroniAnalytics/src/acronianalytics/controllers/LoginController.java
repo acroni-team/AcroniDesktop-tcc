@@ -6,17 +6,26 @@
 package acronianalytics.controllers;
 
 import com.sun.javafx.scene.control.skin.TextFieldSkin;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -31,7 +40,9 @@ public class LoginController implements Initializable {
 
     @FXML
     private TextField txt1;
-
+    
+    @FXML
+    private GridPane gridpane;
     @FXML
     private TextField txt2;
 
@@ -77,6 +88,36 @@ public class LoginController implements Initializable {
         }
     }
 
-
+    @FXML
+    public void entrar() throws IOException {
+        ((Stage) txt1.getScene().getWindow()).close();
+    
+        Node root = FXMLLoader.load(getClass().getResource("/acronianalytics/views/masterpage.fxml"));
+        Node app = FXMLLoader.load(getClass().getResource("/acronianalytics/views/aplicativo.fxml"));
+        ScrollPane sp = new ScrollPane();
+        sp.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        sp.setContent(app);
+        AnchorPane ap = new AnchorPane();
+        ap.getChildren().add(sp);
+        ap.getChildren().add(root);
+                
+        AnchorPane.setRightAnchor(sp, 0.0);
+        
+               
+        Stage st = new Stage();
+        st.setScene(new Scene(ap)); 
+        
+        st.initStyle(StageStyle.UNDECORATED);
+        Screen screen = Screen.getPrimary();
+        Rectangle2D bounds = screen.getVisualBounds();
+        st.setX(bounds.getMinX());
+        st.setY(bounds.getMinY());
+        st.setWidth(bounds.getWidth());
+        st.setHeight(bounds.getHeight());
+        st.setResizable(false);
+        
+        st.show();
+        
+    }
     
 }

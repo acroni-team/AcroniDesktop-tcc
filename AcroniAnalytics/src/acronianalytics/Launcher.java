@@ -29,7 +29,7 @@ public class Launcher extends Application {
         
         //Esperando o dia em que o Braga terminar os layouts rs
         primaryStage.setTitle("Shit is crazy shit is yaeji");
-        primaryStage.initStyle(StageStyle.UTILITY);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
