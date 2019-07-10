@@ -15,6 +15,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
@@ -94,7 +95,13 @@ public class LoginController implements Initializable {
     
         Node root = FXMLLoader.load(getClass().getResource("/acronianalytics/views/masterpage.fxml"));
         Node app = FXMLLoader.load(getClass().getResource("/acronianalytics/views/aplicativo.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/acronianalytics/views/masterpage.fxml"));
+        Parent noot = loader.load();
+        
+        AplicativoController ctrl = (AplicativoController)loader.getController();
+        
         ScrollPane sp = new ScrollPane();
+        ctrl.t(sp);
         sp.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         sp.setContent(app);
         AnchorPane ap = new AnchorPane();

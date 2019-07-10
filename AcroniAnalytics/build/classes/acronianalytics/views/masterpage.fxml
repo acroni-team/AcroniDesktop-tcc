@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
 <AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1050.0" prefWidth="150.0" style="-fx-background-color: #f2f2f2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="acronianalytics.controllers.AplicativoController">
@@ -30,22 +31,22 @@
                   <Insets left="10.0" />
                </padding>
             </Label>
-            <Label prefWidth="170.0" style="-fx-font-family: 'Open Sans Bold'; -fx-font-size: 30px;" text="Cliente" textFill="#8b8b8b" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <Label onMouseClicked="#entrarApp" prefWidth="170.0" style="-fx-font-family: 'Open Sans Bold'; -fx-font-size: 30px;" styleClass="icons" text="Cliente" textFill="#8b8b8b" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <padding>
                   <Insets left="10.0" />
                </padding>
             </Label>
-            <Label prefWidth="170.0" style="-fx-font-family: 'Open Sans Bold'; -fx-font-size: 30px;" text="Jogo" textFill="#8b8b8b" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <Label onMouseClicked="#entrarJogo" prefWidth="170.0" style="-fx-font-family: 'Open Sans Bold'; -fx-font-size: 30px;" styleClass="icons" text="Jogo" textFill="#8b8b8b" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <padding>
                   <Insets left="10.0" />
                </padding>
             </Label>
-            <Label prefWidth="170.0" style="-fx-font-family: 'Open Sans Bold'; -fx-font-size: 30px;" text="Website" textFill="#8b8b8b" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <Label onMouseClicked="#entrarWebsite" prefWidth="170.0" style="-fx-font-family: 'Open Sans Bold'; -fx-font-size: 30px;" styleClass="icons" text="Website" textFill="#8b8b8b" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                <padding>
                   <Insets left="10.0" />
                </padding>
             </Label>
-            <Label prefWidth="170.0" style="-fx-font-family: 'Open Sans Bold'; -fx-font-size: 30px;" text="Sair" textFill="#8b8b8b" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+            <Label prefWidth="170.0" style="-fx-font-family: 'Open Sans Bold'; -fx-font-size: 30px;" styleClass="icons" text="Sair" textFill="#8b8b8b" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                <padding>
                   <Insets left="10.0" />
                </padding>
@@ -71,17 +72,17 @@
                   <Image url="@../../res/img/logo.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" styleClass="icons" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <ImageView fitHeight="80.0" fitWidth="80.0" onMouseClicked="#entrarJogo" pickOnBounds="true" preserveRatio="true" styleClass="icons" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <image>
                   <Image url="@../../res/img/Controler.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" styleClass="icons" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <ImageView fitHeight="80.0" fitWidth="80.0" onMouseClicked="#entrarApp" pickOnBounds="true" preserveRatio="true" styleClass="icons" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <image>
                   <Image url="@../../res/img/TECLA.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" styleClass="icons" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <ImageView fitHeight="80.0" fitWidth="80.0" onMouseClicked="#entrarWebsite" pickOnBounds="true" preserveRatio="true" styleClass="icons" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                <image>
                   <Image url="@../../res/img/A_web_explorer.png" />
                </image>
@@ -93,5 +94,6 @@
             </ImageView>
          </children>
       </GridPane>
+      <Pane fx:id="active" layoutX="-2.0" layoutY="338.0" prefHeight="75.0" prefWidth="7.0" style="-fx-background-color: #0093ff; -fx-background-radius: 10;" />
    </children>
 </AnchorPane>
