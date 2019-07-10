@@ -98,11 +98,15 @@ public class LoginController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/acronianalytics/views/masterpage.fxml"));
         Parent noot = loader.load();
         
-        AplicativoController ctrl = (AplicativoController)loader.getController();
+        MasterpageController ctrl = (MasterpageController)loader.getController();
         
         ScrollPane sp = new ScrollPane();
+        sp.setPrefHeight(1040);
+        sp.setFitToHeight(true);
+        sp.setFitToWidth(true);
         ctrl.t(sp);
         sp.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        sp.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         sp.setContent(app);
         AnchorPane ap = new AnchorPane();
         ap.getChildren().add(sp);
