@@ -94,7 +94,7 @@ public class LoginController implements Initializable {
         ((Stage) txt1.getScene().getWindow()).close();
     
         Node root = FXMLLoader.load(getClass().getResource("/acronianalytics/views/masterpage.fxml"));
-        Node app = FXMLLoader.load(getClass().getResource("/acronianalytics/views/aplicativo.fxml"));
+        Node app = FXMLLoader.load(getClass().getResource("/acronianalytics/views/jogo.fxml"));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/acronianalytics/views/masterpage.fxml"));
         Parent noot = loader.load();
         

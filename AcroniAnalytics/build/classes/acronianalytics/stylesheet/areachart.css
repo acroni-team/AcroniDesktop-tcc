@@ -12,10 +12,6 @@
 .axis-tick-mark, .axis-minor-tick-mark {
     -fx-stroke-width: 0; 
 }
-/*
-.chart-area-symbol {
-    -fx-background-radius: 4px; 
-}*/
 .default-color0.chart-area-symbol { 
     -fx-background-color: #0093ff, #ffffff;
 }
@@ -26,3 +22,4 @@
 .default-color0.chart-series-area-fill { 
     -fx-fill: #0093FF47; 
 }
+

@@ -64,7 +64,7 @@ public class MasterpageController implements Initializable {
     }
 
     @FXML
-    private void entrarJogo(MouseEvent event) {
+    private void entrarJogo(MouseEvent event) throws IOException {
         TranslateTransition t = new TranslateTransition();
         t.setDuration(Duration.seconds(0.4));
         if (aux[1]) {
@@ -76,6 +76,8 @@ public class MasterpageController implements Initializable {
         t.setToY(0);
         t.setNode(active);
         t.play(); 
+        Node app = FXMLLoader.load(getClass().getResource("/acronianalytics/views/jogo.fxml"));
+        sp.setContent(app);
     }
 
     @FXML

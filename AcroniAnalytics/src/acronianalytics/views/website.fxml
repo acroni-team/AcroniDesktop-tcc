@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 
 <AnchorPane fx:id="anchorApp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="3000.0" prefWidth="1783.0" style="-fx-background-color: 'transparent';" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -11,5 +12,6 @@
             <Insets left="200.0" top="25.0" />
          </padding>
       </Label>
+      <Circle fill="#0093ff" layoutX="236.0" layoutY="80.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
    </children>
 </AnchorPane>

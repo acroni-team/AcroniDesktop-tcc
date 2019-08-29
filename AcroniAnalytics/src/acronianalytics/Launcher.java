@@ -7,13 +7,9 @@ package acronianalytics;
 
 import java.io.IOException;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -26,13 +22,16 @@ public class Launcher extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/acronianalytics/views/login.fxml"));
+        try {
         
-        //Esperando o dia em que o Braga terminar os layouts rs
-        primaryStage.setTitle("Shit is crazy shit is yaeji");
-        primaryStage.initStyle(StageStyle.UNDECORATED);
-        Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+            primaryStage.setTitle("Shit is crazy shit is yaeji");
+            primaryStage.initStyle(StageStyle.UNDECORATED);
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (Exception e) {
+            
+        }
     }
 
     /**
