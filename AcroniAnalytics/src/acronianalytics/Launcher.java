@@ -12,6 +12,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import net.thegreshams.firebase4j.error.FirebaseException;
+import net.thegreshams.firebase4j.error.JacksonUtilityException;
+import net.thegreshams.firebase4j.model.FirebaseResponse;
+import net.thegreshams.firebase4j.service.Firebase;
+import org.codehaus.jackson.map.JsonMappingException;
 
 /**
  *
@@ -37,7 +42,39 @@ public class Launcher extends Application {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FirebaseException, IOException{
+        // get the base-url (ie: 'http://gamma.firebase.com/username')
+		String firebase_baseUrl = "https://analytics-7777.firebaseio.com/";
+
+		// get the api-key (ie: 'tR7u9Sqt39qQauLzXmRycXag18Z2')
+		String firebase_apiKey = "AIzaSyCmE5kK8pdR1oyD3EOcU4zsnxYq2XSylIE";
+
+		for( String s : args ) {
+			if( s == null || s.trim().isEmpty() ) continue;
+			String[] split = s.trim().split( "=" );
+
+			if( split[0].equals("baseUrl") ) {
+				firebase_baseUrl = split[1];
+			}
+			else if( split[0].equals("apiKey") ) {
+				firebase_apiKey = split[1];
+			}
+		}
+                
+		if(firebase_baseUrl == null || firebase_baseUrl.trim().isEmpty() ) {
+			throw new IllegalArgumentException( "Program-argument 'baseUrl' not found but required" );
+		}
+
+		// create the firebase
+		Firebase firebase = new Firebase(firebase_baseUrl);
+
+                // "DELETE" (the fb4jDemo-root)
+		FirebaseResponse response;
+                
+                // "GET" (the fb4jDemo-root)
+		response = firebase.get();
+		System.out.println( "\n\nResult of GET:\n" + response );
+		System.out.println("\n");
         launch(args);
     }
     

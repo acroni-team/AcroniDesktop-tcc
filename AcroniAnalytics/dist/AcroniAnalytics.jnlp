@@ -8,12 +8,18 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="AcroniAnalytics.jar" size="320117" download="eager" />
+    <jar href="AcroniAnalytics.jar" size="334426" download="eager" />
+    <jar href="lib\commons-logging-1.1.3.jar" size="62050" download="eager" />
+    <jar href="lib\httpclient-4.3.6.jar" size="592008" download="eager" />
+    <jar href="lib\httpcore-4.3.3.jar" size="282793" download="eager" />
+    <jar href="lib\jackson-all-1.7.4.jar" size="952310" download="eager" />
+    <jar href="lib\jackson-mapper-asl-1.5.0.jar" size="483809" download="eager" />
     <jar href="lib\jtds-1.3.1.jar" size="317816" download="eager" />
+    <jar href="lib\log4j-1.2.16.jar" size="481535" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="AcroniAnalytics" >
     <param name="requiredFXVersion" value="8.0+"/>
   </applet-desc>
-  <jfx:javafx-desc  width="800" height="600" main-class="acronianalytics.Launcher"  name="AcroniAnalytics" />
+  <jfx:javafx-desc  width="800" height="600" main-class="Inicializando view. Aguarde..."  name="AcroniAnalytics" />
   <update check="always"/>
 </jnlp>
